@@ -11,14 +11,10 @@ public class KModel {
 
     public int tag;
 
-    public KModel nextMin, preMin;
-    public KModel nextDay, preDay;
-    public KModel nextWeek, preWeek;
-
-    public int timeIndex;
     public Link bindLink;
 
-    public KModel() {
+    public KModel(Link bindLink) {
+        this.bindLink=bindLink;
         k = new double[3 + bindLink.in.length];
         for (int i = 0; i < k.length; i++) {
             k[i] = 1.0;
@@ -27,14 +23,14 @@ public class KModel {
         v = 0;
     }
 
-    public double calcV() {
+    public double calcV(final double preMin, final double preDay, final double preWeek, final double[] preLink) {
         v = b;
-        v += k[0] * preMin.v;
-        v += k[1] * preDay.v;
-        v += k[2] * preWeek.v;
-        if (timeIndex > 0) {    //2min前的上一条路
-            for (int i = 0; i < bindLink.in.length; i++) {
-                v += k[i + 3] * bindLink.in[i].k[timeIndex - 1].v;
+        v += k[0] * preMin;
+        v += k[1] * preDay;
+        v += k[2] * preWeek;
+        if (preLink!=null) {    //2min前的上一条路
+            for (int i = 0; i < preLink.length; i++) {
+                v += k[i + 3] * preLink[i];
             }
         }
         return v;
