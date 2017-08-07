@@ -18,19 +18,24 @@ public class CsvWriter {
     }
 
 
-    private String generateLine(final String[] lines){
+    private String generateLine(final String[] lines, final String split){
         String line="";
+        String spl=(split==null)?",":split;
         if(lines.length>0) {
             line=lines[0];
             for (int i = 1; i < lines.length; i++) {
-                line+=","+lines[i];
+                line+=spl+lines[i];
             }
         }
         return line;
     }
 
+    public void writeLine(final String[] lines, final String split) throws IOException {
+        writeLine(generateLine(lines,split));
+    }
+
     public void writeLine(final String[] lines) throws IOException {
-        writeLine(generateLine(lines));
+        writeLine(lines,null);
     }
 
     public void writeLine(final String line) throws IOException{

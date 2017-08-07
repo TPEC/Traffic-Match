@@ -2,7 +2,7 @@ package tests;
 
 import core.Data;
 import core.PreWork;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Random;
 
 public class UnitTest {
     @Test
@@ -59,5 +60,28 @@ public class UnitTest {
     public void trainTest() throws IOException {
         Data data=new Data();
         data.load();
+        for(int i=0;i<10;i++) {
+            System.out.print("#"+String.valueOf(i));
+            data.train();
+        }
+        data.predictResult();
+        data.output();
+    }
+
+    @Test
+    public void rekTest(){
+        Random rnd=new Random();
+        double k=rnd.nextDouble();
+        for(int i=0;i<10;i++) {
+            double vt = rnd.nextDouble() * 100-50;
+            double vn = rnd.nextDouble() * 100-50;
+
+            System.out.printf("%.3f,\t%.3f\n", vt, k * vn);
+            double rate =1- vt/(vn*k);
+            k *= 1 - rate * 0.5;
+            System.out.println("k:"+k);
+            System.out.printf("%.3f,\t%.3f\n",vt,k*vn);
+            System.out.println();
+        }
     }
 }

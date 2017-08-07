@@ -16,7 +16,7 @@ public class Link {
     public Link[] out;
     public Link[] in;
 
-    public Map<Long,Integer> time;
+    public Map<Long,Double> time;
     public KModel[] k;
 
     public Link(){
@@ -27,8 +27,8 @@ public class Link {
     public double getTravelTime(long date){
         long ds=date-date%120000L;
         long de=ds+120000L;
-        int ts=time.getOrDefault(ds,0);
-        int te=time.getOrDefault(de,0);
+        double ts=time.getOrDefault(ds,0.0);
+        double te=time.getOrDefault(de,0.0);
         if(ts>0 && te>0){
             return (double)((de-date)*ts+(date-ds)*te)/120000.0;
         }else if(ts>0){
@@ -45,7 +45,7 @@ public class Link {
         String line= reader.nextLine();
         while (line!=null){
             String[] ls=line.split(",");
-            time.put(Long.valueOf(ls[0]),Integer.valueOf(ls[1]));
+            time.put(Long.valueOf(ls[0]),Double.valueOf(ls[1]));
             line=reader.nextLine();
         }
         initKModel();
