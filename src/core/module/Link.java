@@ -21,7 +21,7 @@ public class Link {
 
     public Link(){
         time=new TreeMap<>();
-        k=new KModel[210];
+        k=new KModel[270];
     }
 
     public double getTravelTime(long date){

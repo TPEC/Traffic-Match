@@ -16,8 +16,11 @@ public class KModel {
     public KModel(Link bindLink) {
         this.bindLink=bindLink;
         k = new double[3 + bindLink.in.length];
-        for (int i = 0; i < k.length; i++) {
-            k[i] = 0.01/k.length;
+        k[0]=0.1;
+        k[1]=0.03;
+        k[2]=0.03;
+        for (int i = 3; i < k.length; i++) {
+            k[i] = 0.04/(k.length-3);
         }
         v = 0;
     }

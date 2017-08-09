@@ -4,19 +4,24 @@ import core.base.CsvReader;
 import core.base.CsvWriter;
 import core.factory.LinkFactory;
 import core.module.Link;
+import tests.Configure;
 
 import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import tests.Configure.*;
+
+import static tests.Configure.*;
 
 public class Data {
     Map<String,Link> lm=new TreeMap<>();
+    public Map<Long,Integer> speDate=new TreeMap<>();
 
     public Data load() throws IOException {
         long spentTime= System.currentTimeMillis();
 
         System.out.println("Loading link info...");
-        CsvReader reader=new CsvReader("D:\\Downloads\\gy_contest_link_info.txt");
+        CsvReader reader=new CsvReader(Configure.PATH_LINK_INFO);
         String line=reader.nextLine();
         while(line!=null){
             Link link= LinkFactory.createLink(line);
@@ -26,7 +31,7 @@ public class Data {
         reader.close();
 
         System.out.println("Loading link top...");
-        reader.open("D:\\Downloads\\gy_contest_link_top(20170715).txt");
+        reader.open(Configure.PATH_LINK_TOP);
         line=reader.nextLine();
         while(line!=null){
             String[] s=line.split(";");
@@ -49,18 +54,24 @@ public class Data {
         Iterator iterator=lm.entrySet().iterator();
         while (iterator.hasNext()){
             Map.Entry<String,Link> entry= (Map.Entry) iterator.next();
-            entry.getValue().loadData("D:\\Downloads\\out");
+            entry.getValue().loadData(Configure.PATH_FOLDER_TRAVELTIME);
         }
 
         System.out.println("Loading average base...");
-        reader.open("D:\\Downloads\\result.csv");
+        reader.open(Configure.PATH_AVERAGE_TRAVELTIME);
         line=reader.nextLine();
         while (line!=null){
             String[] ls=line.split(",");
-            lm.get(ls[0]).k[Integer.valueOf(ls[3])*30+Integer.valueOf(ls[1])].b=Double.valueOf(ls[2])*0.99;
+            lm.get(ls[0]).k[Integer.valueOf(ls[3])*30+Integer.valueOf(ls[1])].b=Double.valueOf(ls[2])*0.9;
             line=reader.nextLine();
         }
         reader.close();
+
+        speDate.put(new Date(116,3,4,8,0,0).getTime(),7);
+        speDate.put(new Date(116,4,2,8,0,0).getTime(),7);
+        speDate.put(new Date(116,5,9,8,0,0).getTime(),7);
+        speDate.put(new Date(116,5,10,8,0,0).getTime(),6);
+        speDate.put(new Date(116,5,12,8,0,0).getTime(),4);
 
         spentTime=System.currentTimeMillis()-spentTime;
         System.out.println("Loading finished in "+String.valueOf(spentTime)+"ms");
@@ -85,20 +96,13 @@ public class Data {
         return r;
     }
 
-
-    public static final double kLength=1000;
-    public static final double kMinute=0.02;
-    public static final double kDay=0.01;
-    public static final double kWeek=0.005;
-    public static final double kIn=0.01;
-
-    public void train(){
+    public double train(double fx){
         long spentTime=System.currentTimeMillis();
         System.out.println("Training...");
 
         List<Long> timeList=new ArrayList<>();
-        Date date=new Date(116,2,1,8,0,0);
-        for(long day=0;day<92;day++){
+        Date date=new Date(116,2,8,8,0,0);
+        for(long day=0;day<85;day++){
             long t=date.getTime()+1000L*3600L*24L*day;
             for(long minute=0;minute<60;minute+=2){
                 long t2=t+1000L*60*minute;
@@ -114,7 +118,10 @@ public class Data {
                 Map.Entry<String, Link> entry = (Map.Entry<String, Link>) iterator.next();
                 Link link=entry.getValue();
                 int ki=date.getDay() * 30 + date.getMinutes() / 2;
-                double value=link.getTravelTime(date.getTime())-link.k[ki].b;
+                if(speDate.containsKey(date.getTime()-date.getTime()%(1000L*3600L*24L))){
+                    ki=speDate.get(date.getTime()-date.getTime()%(1000L*3600L*24L))*30+date.getMinutes()/2;
+                }
+                double value=link.getTravelTime(date.getTime());
                 if(value>0) {
                     double pre2Min = link.getTravelTime(date.getTime() - 1000L * 120L);
                     double preDay = link.getTravelTime(date.getTime() - 1000L * 3600L * 24L);
@@ -127,22 +134,24 @@ public class Data {
                         preLink[j] = link.in[j].getTravelTime(date.getTime() - deltT);
                     }
                     KModel k=link.k[ki];
-                    double v = k.calcV(pre2Min, preDay, preWeek, preLink)-k.b;
-                    chaju+=Math.abs(v-value)/(value+k.b);
+                    double v = k.calcV(pre2Min, preDay, preWeek, preLink);
+                    chaju+=Math.abs(v-value)/(value);
                     double rate;
                     if(v==0)
                         rate=0;
                     else
                         rate=1-value/v;
+                    if(rate>0)
+                        k.b*=1-rate*0.2*fx;
                     if(pre2Min!=0)
-                        k.k[0]*=1-rate*kMinute;
+                        k.k[0]*=1-rate*kMinute*fx;
                     if(preDay!=0)
-                        k.k[1]*=1-rate*kDay;
+                        k.k[1]*=1-rate*kDay*fx;
                     if(preWeek!=0)
-                        k.k[2]*=1-rate*kWeek;
+                        k.k[2]*=1-rate*kWeek*fx;
                     for(int j=0;j<preLink.length;j++){
                         if(preLink[j]!=0)
-                            k.k[3+j]*=1-rate*kIn;
+                            k.k[3+j]*=1-rate*kIn*fx;
                     }
                 }
             }
@@ -152,6 +161,8 @@ public class Data {
 
         spentTime=System.currentTimeMillis()-spentTime;
         System.out.println("Training finished in "+spentTime+"ms");
+
+        return chaju;
     }
 
     public void predictResult(){
@@ -173,6 +184,10 @@ public class Data {
             while (iterator.hasNext()) {
                 Map.Entry<String, Link> entry = (Map.Entry<String, Link>) iterator.next();
                 Link link=entry.getValue();
+                int ki=date.getDay() * 30 + date.getMinutes() / 2;
+                if(speDate.containsKey(date.getTime()-date.getTime()%(1000L*3600L*24L))){
+                    ki=speDate.get(date.getTime()-date.getTime()%(1000L*3600L*24L))*30+date.getMinutes()/2;
+                }
                 double pre2Min = link.getTravelTime(date.getTime() - 1000L * 120L);
                 double preDay = link.getTravelTime(date.getTime() - 1000L * 3600L * 24L);
                 double preWeek = link.getTravelTime(date.getTime() - 1000L * 3600L * 24L * 7L);
@@ -183,7 +198,7 @@ public class Data {
                         deltT=1000L*120L;
                     preLink[j] = link.in[j].getTravelTime(date.getTime() - deltT);
                 }
-                KModel k = link.k[date.getDay() * 30 + date.getMinutes() / 2];
+                KModel k = link.k[ki];
                 entry.getValue().time.put(date.getTime(), k.calcV(pre2Min, preDay, preWeek, preLink));
             }
         }
