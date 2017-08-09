@@ -6,6 +6,8 @@ public class Configure {
     public static final String PATH_FOLDER_TRAVELTIME="D:\\Downloads\\out";
     public static final String PATH_AVERAGE_TRAVELTIME="D:\\Downloads\\result.csv";
 
+    public static final String PATH_OUTPUT="D:\\Downloads\\myResult.txt";
+
     public static final double kLength=500;
     public static final double kMinute=0.2;
     public static final double kDay=0.01;

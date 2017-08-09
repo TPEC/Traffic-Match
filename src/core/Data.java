@@ -209,7 +209,7 @@ public class Data {
 
     public void output() throws IOException {
         CsvWriter writer=new CsvWriter();
-        writer.open("D:\\Downloads\\myResult.csv");
+        writer.open(Configure.PATH_OUTPUT);
         Iterator iterator=lm.entrySet().iterator();
         SimpleDateFormat sdf0=new SimpleDateFormat("yyyy-MM-dd");
         SimpleDateFormat sdf1=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");

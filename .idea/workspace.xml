@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="011a6f17-e46b-4122-b2f3-ba15f0cd8056" name="Default" comment="" />
+    <list default="true" id="011a6f17-e46b-4122-b2f3-ba15f0cd8056" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/Data.java" afterPath="$PROJECT_DIR$/src/core/Data.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tests/Configure.java" afterPath="$PROJECT_DIR$/src/tests/Configure.java" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,8 +18,8 @@
       <file leaf-file-name="UnitTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/tests/UnitTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
-              <caret line="113" column="25" lean-forward="true" selection-start-line="113" selection-start-column="25" selection-end-line="113" selection-end-column="25" />
+            <state relative-caret-position="347">
+              <caret line="119" column="16" lean-forward="true" selection-start-line="119" selection-start-column="16" selection-end-line="119" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -51,12 +54,11 @@
       <file leaf-file-name="Data.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/core/Data.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2312">
-              <caret line="147" column="33" lean-forward="true" selection-start-line="147" selection-start-column="33" selection-end-line="147" selection-end-column="33" />
+            <state relative-caret-position="339">
+              <caret line="211" column="41" lean-forward="false" selection-start-line="211" selection-start-column="41" selection-end-line="211" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#generateLinkArray#0;class#Data#0" expanded="false" />
-                <element signature="method#output#0;class#Data#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -75,8 +77,8 @@
       <file leaf-file-name="Configure.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/tests/Configure.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="44" lean-forward="false" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
+            <state relative-caret-position="187">
+              <caret line="11" column="43" lean-forward="true" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -122,8 +124,8 @@
         <option value="$PROJECT_DIR$/src/core/KModel.java" />
         <option value="$PROJECT_DIR$/src/Settings.java" />
         <option value="$PROJECT_DIR$/src/tests/Settings.java" />
-        <option value="$PROJECT_DIR$/src/core/Data.java" />
         <option value="$PROJECT_DIR$/src/tests/UnitTest.java" />
+        <option value="$PROJECT_DIR$/src/core/Data.java" />
         <option value="$PROJECT_DIR$/src/tests/Configure.java" />
       </list>
     </option>
@@ -473,7 +475,7 @@
       <workItem from="1502068741775" duration="19275000" />
       <workItem from="1502186306315" duration="625000" />
       <workItem from="1502241762004" duration="3830000" />
-      <workItem from="1502261433196" duration="661000" />
+      <workItem from="1502261433196" duration="1059000" />
     </task>
     <servers />
   </component>
@@ -510,7 +512,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57191000" />
+    <option name="totallyTimeSpent" value="57589000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -634,7 +636,6 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#generateLinkArray#0;class#Data#0" expanded="false" />
-            <element signature="method#output#0;class#Data#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -673,7 +674,6 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#generateLinkArray#0;class#Data#0" expanded="false" />
-            <element signature="method#output#0;class#Data#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -730,7 +730,6 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#generateLinkArray#0;class#Data#0" expanded="false" />
-            <element signature="method#output#0;class#Data#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -824,7 +823,6 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#generateLinkArray#0;class#Data#0" expanded="false" />
-            <element signature="method#output#0;class#Data#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -911,7 +909,6 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#generateLinkArray#0;class#Data#0" expanded="false" />
-            <element signature="method#output#0;class#Data#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -951,7 +948,6 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#generateLinkArray#0;class#Data#0" expanded="false" />
-            <element signature="method#output#0;class#Data#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1053,8 +1049,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/tests/UnitTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="113" column="25" lean-forward="true" selection-start-line="113" selection-start-column="25" selection-end-line="113" selection-end-column="25" />
+        <state relative-caret-position="347">
+          <caret line="119" column="16" lean-forward="true" selection-start-line="119" selection-start-column="16" selection-end-line="119" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1063,20 +1059,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/core/Data.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2312">
-          <caret line="147" column="33" lean-forward="true" selection-start-line="147" selection-start-column="33" selection-end-line="147" selection-end-column="33" />
+        <state relative-caret-position="339">
+          <caret line="211" column="41" lean-forward="false" selection-start-line="211" selection-start-column="41" selection-end-line="211" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#generateLinkArray#0;class#Data#0" expanded="false" />
-            <element signature="method#output#0;class#Data#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/tests/Configure.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="44" lean-forward="false" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
+        <state relative-caret-position="187">
+          <caret line="11" column="43" lean-forward="true" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
           <folding />
         </state>
       </provider>
