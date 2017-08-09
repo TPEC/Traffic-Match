@@ -12,7 +12,7 @@ public class Configure {
     public static final double kWeek=0.05;
     public static final double kIn=0.05;
 
-    public static final double trainRate=0.2;
+    public static final double trainRate=0.02;
 
     public static final long trainMax=10000;
 }

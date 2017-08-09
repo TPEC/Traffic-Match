@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="011a6f17-e46b-4122-b2f3-ba15f0cd8056" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/tests/Configure.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/core/Train.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TrafficMatch/core/Data.class" afterPath="$PROJECT_DIR$/out/production/TrafficMatch/core/Data.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TrafficMatch/core/KModel.class" afterPath="$PROJECT_DIR$/out/production/TrafficMatch/core/KModel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TrafficMatch/core/module/Link.class" afterPath="$PROJECT_DIR$/out/production/TrafficMatch/core/module/Link.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TrafficMatch/tests/UnitTest.class" afterPath="$PROJECT_DIR$/out/production/TrafficMatch/tests/UnitTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/Data.java" afterPath="$PROJECT_DIR$/src/core/Data.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/KModel.java" afterPath="$PROJECT_DIR$/src/core/KModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/module/Link.java" afterPath="$PROJECT_DIR$/src/core/module/Link.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tests/UnitTest.java" afterPath="$PROJECT_DIR$/src/tests/UnitTest.java" />
-    </list>
+    <list default="true" id="011a6f17-e46b-4122-b2f3-ba15f0cd8056" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -87,8 +75,8 @@
       <file leaf-file-name="Configure.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/tests/Configure.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+            <state relative-caret-position="238">
+              <caret line="14" column="44" lean-forward="false" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -135,8 +123,8 @@
         <option value="$PROJECT_DIR$/src/Settings.java" />
         <option value="$PROJECT_DIR$/src/tests/Settings.java" />
         <option value="$PROJECT_DIR$/src/core/Data.java" />
-        <option value="$PROJECT_DIR$/src/tests/Configure.java" />
         <option value="$PROJECT_DIR$/src/tests/UnitTest.java" />
+        <option value="$PROJECT_DIR$/src/tests/Configure.java" />
       </list>
     </option>
   </component>
@@ -485,7 +473,7 @@
       <workItem from="1502068741775" duration="19275000" />
       <workItem from="1502186306315" duration="625000" />
       <workItem from="1502241762004" duration="3830000" />
-      <workItem from="1502261433196" duration="631000" />
+      <workItem from="1502261433196" duration="661000" />
     </task>
     <servers />
   </component>
@@ -522,7 +510,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57161000" />
+    <option name="totallyTimeSpent" value="57191000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -546,7 +534,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37002653" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27718833" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27718833" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23129252" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1087,8 +1075,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/tests/Configure.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        <state relative-caret-position="238">
+          <caret line="14" column="44" lean-forward="false" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
           <folding />
         </state>
       </provider>
