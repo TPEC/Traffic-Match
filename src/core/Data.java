@@ -20,7 +20,7 @@ public class Data {
     public Data load() throws IOException {
         long spentTime= System.currentTimeMillis();
 
-        System.out.println("Loading link info...");
+//        System.out.println("Loading link info...");
         CsvReader reader=new CsvReader(Configure.PATH_LINK_INFO);
         String line=reader.nextLine();
         while(line!=null){
@@ -30,7 +30,7 @@ public class Data {
         }
         reader.close();
 
-        System.out.println("Loading link top...");
+//        System.out.println("Loading link top...");
         reader.open(Configure.PATH_LINK_TOP);
         line=reader.nextLine();
         while(line!=null){
@@ -50,14 +50,14 @@ public class Data {
         }
         reader.close();
 
-        System.out.println("Loading travel time...");
+//        System.out.println("Loading travel time...");
         Iterator iterator=lm.entrySet().iterator();
         while (iterator.hasNext()){
             Map.Entry<String,Link> entry= (Map.Entry) iterator.next();
             entry.getValue().loadData(Configure.PATH_FOLDER_TRAVELTIME);
         }
 
-        System.out.println("Loading average base...");
+//        System.out.println("Loading average base...");
         reader.open(Configure.PATH_AVERAGE_TRAVELTIME);
         line=reader.nextLine();
         while (line!=null){
@@ -74,7 +74,7 @@ public class Data {
         speDate.put(new Date(116,5,12,8,0,0).getTime(),4);
 
         spentTime=System.currentTimeMillis()-spentTime;
-        System.out.println("Loading finished in "+String.valueOf(spentTime)+"ms");
+//        System.out.println("Loading finished in "+String.valueOf(spentTime)+"ms");
 
         return this;
     }
@@ -98,7 +98,6 @@ public class Data {
 
     public double train(double fx){
         long spentTime=System.currentTimeMillis();
-        System.out.println("Training...");
 
         List<Long> timeList=new ArrayList<>();
         Date date=new Date(116,2,8,8,0,0);
@@ -157,17 +156,17 @@ public class Data {
             }
         }
         chaju/=132*timeList.size();
-        System.out.println("Chaju:"+ String.valueOf(chaju));
+//        System.out.println("Chaju:"+ String.valueOf(chaju));
 
         spentTime=System.currentTimeMillis()-spentTime;
-        System.out.println("Training finished in "+spentTime+"ms");
+//        System.out.println("Training finished in "+spentTime+"ms");
 
         return chaju;
     }
 
     public void predictResult(){
         long spentTime=System.currentTimeMillis();
-        System.out.println("Predicting...");
+//        System.out.println("Predicting...");
 
         List<Long> timeList=new ArrayList<>();
         Date date=new Date(116,5,1,8,0,0);
@@ -204,7 +203,7 @@ public class Data {
         }
 
         spentTime=System.currentTimeMillis()-spentTime;
-        System.out.println("Predicting finished in "+spentTime+"ms");
+//        System.out.println("Predicting finished in "+spentTime+"ms");
     }
 
     public void output() throws IOException {
